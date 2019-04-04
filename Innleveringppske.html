@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>INNLEVERING PÅSKE</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Learning Navigation with HTML and CSS">
+	<meta name="keywords" content="Learning HTML, Learning CSS, HTML, CSS">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<style>
+	@charset 'UTF-8';
+/*-----------------------------------
+
+	1.  Imports
+	2.	Variables & Mixins
+	3.  Screen View
+	4.	Tablet View
+	5.	Mobile View
+
+------------------------------------*/
+/*----- 1. @import -----*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+}
+img {
+    width: 50%;
+    height: auto;
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'ZCOOL KuaiLe';
+  font-style: normal;
+  font-weight: 400;
+  src: local('ZCOOL KuaiLe Regular'), local('ZCOOLKuaiLe-Regular'), url(https://fonts.gstatic.com/s/zcoolkuaile/v2/tssqApdaRQokwFjFJjvM6h2moYb3.ttf) format('truetype');
+}
+/*----- 2. Variables -----*/
+.heading-small {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.16666667em;
+  line-height: 2em;
+  color: #999999;
+}
+.heading-large {
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  line-height: 1em;
+  color: #333333;
+  font-weight: bold;
+  padding-bottom: 1em;
+}
+.para-text {
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  word-spacing: 0.25em;
+  line-height: 1.35em;
+}
+.aside-text {
+  font-size: 1em;
+  text-align: justify;
+  letter-spacing: 0.1em;
+  line-height: 1.5em;
+}
+.foot-head {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 0.03333333em;
+  word-spacing: 0.25em;
+  line-height: 2em;
+  color: #fff;
+}
+.para-foot {
+  font-size: 1em;
+  text-align: justify;
+  line-height: 1.35em;
+  color: #999999;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+.row {
+  width: 100%;
+  clear: both;
+}
+.top-header {
+  grid-area: header;
+}
+.top-header section {
+  display: grid;
+  grid-template-columns: 50% 30% 20%;
+}
+.top-header section div:first-child {
+  grid-column: 1;
+  padding: 1.5em;
+}
+.top-header section div:first-child h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+}
+.top-header section div:first-child h2 {
+  font-size: 1em;
+  font-weight: 200;
+  color: #999999;
+}
+.top-header section div {
+  grid-column: 3;
+}
+.top-header section div input {
+  margin-top: 3em;
+  padding: 1em;
+}
+.top-header figure {
+    background-image: url(header1.jpg);
+    height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.top-header figure img {
+  display: none;
+}
+.top-header nav {
+  background-color: #333333;
+}
+.top-header nav ul {
+  display: grid;
+  grid-template-columns: repeat(6 1fr);
+}
+.top-header nav ul li a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  text-decoration: none;
+  font-size: 1.5em;
+  transition: all ease 0.5s;
+}
+.top-header nav ul li a:hover {
+  background-color: #a9a9a9;
+  color: #333333;
+}
+.l1 {
+  grid-column: 1;
+}
+.l2 {
+  grid-column: 2;
+}
+.l3 {
+  grid-column: 3;
+}
+.l4 {
+  grid-column: 4;
+}
+.l5 {
+  grid-column: 5;
+}
+.l6 {
+  grid-column: 6;
+}
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "aside section";
+  padding: 1em;
+}
+.main-content section {
+  grid-area: section;
+  grid-column: 2;
+  padding: 1em;
+}
+.main-content section article {
+  border-bottom: 0.5vh solid #cdcdcd;
+  margin-bottom: 3em;
+  padding-bottom: 3em;
+}
+.main-content section article h3 {
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  line-height: 1em;
+  color: #333333;
+  font-weight: bold;
+  padding-bottom: 1em;
+}
+.main-content section article p {
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  word-spacing: 0.25em;
+  line-height: 1.35em;
+}
+.main-content aside {
+  grid-area: aside;
+  grid-column: 1;
+  padding: 1em;
+  background-color: #cdcdcd;
+}
+.main-content aside h4 {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.16666667em;
+  line-height: 2em;
+  color: #999999;
+}
+.main-content aside p {
+  font-size: 1em;
+  text-align: justify;
+  letter-spacing: 0.1em;
+  line-height: 1.5em;
+}
+.main-content aside a {
+  color: #999999;
+}
+.main-foot {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #000;
+}
+.main-foot section {
+  padding: 1em;
+}
+.main-foot section h5 {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 0.03333333em;
+  word-spacing: 0.25em;
+  line-height: 2em;
+  color: #fff;
+}
+.main-foot section p {
+  font-size: 1em;
+  text-align: justify;
+  line-height: 1.35em;
+  color: #999999;
+}
+
+	</style>
+</head>
+<body>
+	<header class="top-header">
+		<section>
+			<div>
+				<h1>
+					Strikking, sosialisme, og safari
+				</h1>
+				<h2>
+					De tre essesensielle s'ene for et lykkelig og aktivistisk liv
+				</h2>
+			</div>
+			<div>
+				<label for="search">Search In Google</label>
+				<input type="search" id="search" name="search" q="googlesearch">
+			</div>
+		</section>
+		<figure>
+			<img src="solnedgang.jpg" alt="fjell">
+		</figure>
+		<nav>
+			<ul>
+				<li class="l1" ><a href="#">TUNG BAGASJE</a></li>
+				<li class="l2"><a href="#">UNG, MEN IKKE DUM</a></li>
+				<li class="l3"><a href="#">FINN ÉN FEIL</a></li>
+				<li class="l4"><a href="#">KOBOLT</a></li>
+				<li class="l5"><a href="#">GALLERI</a></li>
+				<li class="l6"><a href="#">NETTBUTIKK</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="row main-content">
+		<section>
+			<article>
+				<h3>
+					MILJØIDEOLOGI 
+				</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+			<article>
+				<h3>
+					OH MY GENSER
+				</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<figure>
+					<img src="strikkeoppskrift_ohmygenser_3.jpg" alt="">
+					<figcaption>BILDETEKST</figcaption>
+				</figure>
+			</article>
+			<article>
+				<h3>
+					HVITE MENN SOM PUSHER 50 
+				</h3>
+				<figure>
+					<img src="solnedgang.jpg" alt="fjell">
+					<figcaption>BILDETEKST</figcaption>
+				</figure>
+			</article>
+		</section>
+		<aside>
+			<h4>IKKE SÅ RELEVANT INFORMASJON OM MEGSELV</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p><br>
+			<a href="#">Find out more....</a>
+		</aside>
+	</main>
+	<footer class="main-foot">
+		<section>
+			<h5>TITTEL</h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</section>
+		<section>
+			<h5>TITTEL</h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</section>
+		<section>
+			<h5>TITTEL</h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</section>
+	</footer>
+</body>
+</html>
